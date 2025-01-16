@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { ToastContainer, toast } from "react-toastify";
 function App() {
   const [Signup, setSignup] = useState(false);
   const [error, seterror] = useState("");
@@ -49,7 +50,7 @@ function App() {
       return;
     }
     if (email && password) {
-      alert("Successful Sign in");
+      toast.success("Successful Sign in");
     }
     setForm({
       firstname: "",
@@ -66,8 +67,9 @@ function App() {
   }
 
   return (
-    <div className="h-screen w-screen bg-gray-300 relative flex items-center justify-center">
-      <div className="flex justify-between shadow-md h-full sm:w-3/4  bg-white /">
+    <div className="min-h-screen min-w-screen bg-gray-300 relative flex items-center justify-center">
+      <ToastContainer autoClose={1000} />
+      <div className="flex justify-between shadow-md h-fit sm:w-3/4  bg-white /">
         <div id="left" className="p-5 border flex-1">
           <div
             id="login-main"
@@ -171,7 +173,7 @@ function App() {
             </span>
           </p>
         </div>
-        <div id="right" className="hidden md:block w-full flex-1">
+        <div id="right" className="hidden md:block w-screen flex-1">
           <img
             src="https://images.pexels.com/photos/15919234/pexels-photo-15919234/free-photo-of-modern-technology-home-office.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt=""
